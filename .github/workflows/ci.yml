@@ -5,7 +5,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
-            - run: sudo apt-get install -y cmake g++
-            - run: cmake -S . -B build
-            - run: cmake --build build -j
-            - run: cd build && ctest --output-on-failure
+            - run: sudo apt-get update && sudo apt-get install -y cmake g++
+            - run: cmake -S arraylib -B arraylib/build
+            - run: cmake --build arraylib/build -j
+            - run: cd arraylib/build && ctest --output-on-failure
