@@ -2,6 +2,7 @@
 #include "arraylib.h"
 int main() {
     int data[] = {5, 3, 8, 1, 9, 2};
+    std::cout << "--- ArrayLib Demo App v1.1.0-dev ---" << std::endl;
     std::cout << "Sum: " << arr_sum(data, 6) << std::endl;
     std::cout << "Max: " << arr_max(data, 6) << std::endl;
     std::cout << "Min: " << arr_min(data, 6) << std::endl;
