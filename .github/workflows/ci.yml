@@ -8,4 +8,5 @@ jobs:
             - run: sudo apt-get update && sudo apt-get install -y cmake g++
             - run: cmake -S arraylib -B arraylib/build
             - run: cmake --build arraylib/build -j
+            - run: cmake --build arraylib/build --target variant_25
             - run: cd arraylib/build && ctest --output-on-failure
