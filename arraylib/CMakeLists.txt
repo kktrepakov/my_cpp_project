@@ -51,4 +51,13 @@ if (BUILD_TESTING)
  target_link_libraries(test_integration PRIVATE arraylib)
  target_compile_options(test_integration PRIVATE -UNDEBUG)
  add_test(NAME integration COMMAND test_integration)
+ # ---- Прикладная задача (Вариант 25) ----
+add_executable(variant_25 examples/variant_25.cpp)
+target_link_libraries(variant_25 PRIVATE arraylib)
+set_target_properties(variant_25 PROPERTIES BUILD_RPATH "$ORIGIN")
+set_target_properties(variant_25 PROPERTIES
+ RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}"
+ LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}"
+ ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}"
+)
 endif()
